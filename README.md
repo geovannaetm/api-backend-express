@@ -33,3 +33,5 @@
 - protocolo http: cuida das requisições e respostas da web, especificando as regras do protocolo.
 
 - express: uma dos framework do node.js que constrói a API backend
+
+- mudança de formato de importação de require para import: no package.json adicionar o tipo = "Type" : "module"
