@@ -35,3 +35,16 @@
 - express: uma dos framework do node.js que constrói a API backend
 
 - mudança de formato de importação de require para import: no package.json adicionar o tipo = "Type" : "module"
+
+--watch(parametro para rodar um js em modo dev, que permite rodar novamente o script quando algum arquivo é alterado)
+
+sintaxe básica de uma rota de API 
+ 
+ app.post('/produtos', (req, res) => {
+  res.json({
+    menssage: ' criado com sucesso!'})
+  })
+
+  - método criar/inserir: post
+  -rota ou endereço: /produto
+  -tipo de resposta: json
