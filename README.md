@@ -48,3 +48,16 @@ sintaxe básica de uma rota de API
   - método criar/inserir: post
   -rota ou endereço: /produto
   -tipo de resposta: json
+
+
+  PADRÃO DE PROJETO:
+
+ - uma forma de realizar a codificação de maneira conhecida no meio dos desenvolvedores, seu benefício é o amplo conhecimento e eficiência no desenvolvimento.
+
+ SIGLA MVC:
+
+ - Model: Acesso do banco de dados, add, delete com operações do banco, definindo as regras do projeto como validção de dados.
+
+ - View: Uma camada de visualização a interface do user, função do front-end.
+
+ - Controller: controla e entrada de dados que estão chegando do user, processamento rever se esta convertido ver a necessidade desses dados que chegam se eles seram deletados cadastrados, e saída de dados. 

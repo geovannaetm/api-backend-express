@@ -1,49 +1,31 @@
 import express from 'express'
+import { createSupplierController } from '../controllers/supplier/createSupplierController.js'
+import { listeSupplierController } from '../controllers/supplier/listeSupplierController.js'
+import { getSupplierByIdController } from '../controllers/supplier/getSupplierByIdController.js'
+import { editSupplierController } from '../controllers/supplier/editSupplierController.js'
+import { deleteSupplierController } from '../controllers/supplier/deleteSupplierController.js'
+
 
 const router = express.Router()
 
-router.post('/', (req, res) => {
-    const dados = req.body
-    res.json({
-        menssage: 'Fonercedor Criado com sucesso',
-        supplier: dados
-    })
-})
+router.post('/', createSupplierController)
 
 
 
-router.get('/', (req, res) => {
-    console.log('Foi feito um GET no /GET')
-    res.json({ message: `Fornecedores listado com sucesso` })
-})
+router.get('/', listeSupplierController)
 
 
 
 
-router.get('/:id', (req, res) => {
-    console.log('Foi feito um GET no /GET')
-    res.json({ message: `Dados do ${id} consultado com sucesso` })
-})
+router.get('/:id', getSupplierByIdController)
 
 
 
-router.put('/:id', (req, res) => {
-    const id = req.params.id
-    const dados = req.body
-    console.log(dados)
-    res.json({
-        menssage: 'Dados Atulizados com suceso',
-        supplier: dados
-
-    })
-})
+router.put('/:id', editSupplierController)
 
 
 
-router.delete('/:id', (req, res) => {
-    const id = req.params.id
-    res.json({ message: `Fonercedor com ID ${id} deletado com sucesso` })
-})
+router.delete('/:id', deleteSupplierController)
 
 
 
