@@ -1,4 +1,12 @@
-export const listeProfileController = (req, res) => {
-    console.log('Foi feito um GET no /GET')
-    res.json({ message: `Usuários listado com sucesso` })
+import { list } from "../../models/profileModel.js"   
+
+export const listeProfileController =  async (req, res) => {
+
+    const result = await list()
+
+    
+    res.json({ 
+        message: 'Usuários listado com sucesso',
+        profile: result
+    })
 }

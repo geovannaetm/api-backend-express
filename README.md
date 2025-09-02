@@ -61,3 +61,27 @@ sintaxe básica de uma rota de API
  - View: Uma camada de visualização a interface do user, função do front-end.
 
  - Controller: controla e entrada de dados que estão chegando do user, processamento rever se esta convertido ver a necessidade desses dados que chegam se eles seram deletados cadastrados, e saída de dados. 
+
+
+
+ - depndencias dev fazem partes e são feramentas do desenvolvimento do projeto(ajuda) / ja as dependencias fazem parte do projeto interno
+
+
+
+ ## COMANDOS DO PRISMA
+
+ - INSTALAÇÃO DO PRISMA
+  - npm i prisma - D
+  - npm i @prisma/client
+
+  - INICIALIZAR O PRISMA
+  - npx prisma init
+
+  -GERAR O MODEL DO PRISMA A PARTIR DE UM BD EXISTENTE
+  -npx prisma db pull
+
+  - GERAR O BD A PARTIR DE UM MODEL DO PRISMA
+  -npx prisma db push
+
+  - GERAR OS ARQUIVOS NECESSÁRIOS PARA USAR O PRISMA CLIENT NO CÓDIGO
+  -npx prisma generate

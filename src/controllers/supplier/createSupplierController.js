@@ -1,4 +1,4 @@
-export const createSuplierController = (req, res) => {
+export const createSupplierController = (req, res) => {
     const dados = req.body
     res.json({
         menssage: 'Fonercedor Criado com sucesso',

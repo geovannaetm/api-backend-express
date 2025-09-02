@@ -1,7 +1,7 @@
 import express from 'express'
 import { createSupplierController } from '../controllers/supplier/createSupplierController.js'
 import { listeSupplierController } from '../controllers/supplier/listeSupplierController.js'
-import { getSupplierByIdController } from '../controllers/supplier/getSupplierByIdController.js'
+import { getSupplierByIdController } from '../controllers/supplier/getByIdSupplierController.js'
 import { editSupplierController } from '../controllers/supplier/editSupplierController.js'
 import { deleteSupplierController } from '../controllers/supplier/deleteSupplierController.js'
 

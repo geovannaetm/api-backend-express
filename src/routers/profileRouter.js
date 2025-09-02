@@ -1,7 +1,7 @@
 import express from 'express'
 import { createProfileController } from '../controllers/profile/createProfileController.js'
 import { listeProfileController } from '../controllers/profile/listeProfileController.js'
-import { getProfileByIdController } from '../controllers/profile/getProfileByIdController.js'
+import { getProfileByIdController } from '../controllers/profile/getByIdProfileController.js'
 import { editProfileController } from '../controllers/profile/editProfileController.js'
 import { deleteProfileController } from '../controllers/profile/deleteProfileController.js'
 
