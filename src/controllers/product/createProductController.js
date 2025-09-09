@@ -1,8 +1,12 @@
-export const createProductController = (req, res) => {
-    const dados = req.body
+import { create } from "../../models/productModel.js"
+
+export const createProductController = async (req, res) => {
+    const product = req.body
+    const result = await create(product)
+    
     res.json({
       menssage: 'Produto Criado com sucesso',
-      product: dados
+      product: result
     })
 }
 
