@@ -6,6 +6,7 @@ import carRouter from './routers/carRouter.js'
 import customerRouter from './routers/customerRouter.js'
 import cors from 'cors'
 import { logger } from './middleware/logger.js'
+import authRouter from './routers/authRouter.js'
 
 
 
@@ -18,6 +19,7 @@ app.use(cors())
 
 app.use(express.json())
 
+app.use('/auth', authRouter )
 app.use('/profile', profileRouter)
 app.use('/product', productRouter)
 app.use('/supplier', supplierRouter)

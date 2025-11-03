@@ -66,6 +66,7 @@ sintaxe básica de uma rota de API
 
  - depndencias dev fazem partes e são feramentas do desenvolvimento do projeto(ajuda) / ja as dependencias fazem parte do projeto interno
 
+- Prisma : mapeamento de backend e banco de dados
 
 
  ## COMANDOS DO PRISMA
