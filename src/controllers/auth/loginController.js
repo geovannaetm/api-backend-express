@@ -6,10 +6,14 @@ export const loginController = async (req, res) => {
     // receber o email e a senha 
     const { email, pass } = req.body
     // comparar se o email e a senha se batem com o que está no banco de dados
+
+    //let tipoUser
+
     const user = await getByEmail(email)
     if (!user) {
         return res.status(401).json({ message: "Email ou senha Inválido (Email, não encontrado)" })
     }
+    //tipoUser = "adm"
     const passOk = await bcrypt.compare(pass, user.pass)
     if (!passOk) {
         return res.status(401).json({ message: "Email ou senha Inválido (Senha inválida)" })
@@ -19,7 +23,8 @@ export const loginController = async (req, res) => {
     console.log("JWT_SECRET:", process.env.JWT_SECRET)
     const token = await jwt.sign({
         id: user.id,
-        email: user.email
+        email: user.email,
+       // tipoUser: tipoUser
     }, process.env.JWT_SECRET, { expiresIn: '1d' })
 
     if (!token) {
