@@ -1,12 +1,41 @@
-export const loginController = (req, res) => {
-    // receber o email e a senha
+import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
+import { getByEmail } from '../../models/profileModel.js'
 
-    // comparar com o banco de dados
+export const loginController = async (req, res) => {
+    // receber o email e a senha 
+    const { email, pass } = req.body
+    // comparar se o email e a senha se batem com o que está no banco de dados
+    const user = await getByEmail(email)
+    if (!user) {
+        return res.status(401).json({ message: "Email ou senha Inválido (Email, não encontrado)" })
+    }
+    const passOk = await bcrypt.compare(pass, user.pass)
+    if (!passOk) {
+        return res.status(401).json({ message: "Email ou senha Inválido (Senha inválida)" })
+    }
 
-    // gerar um token JWT
+    // se bater, gerar um token(JWT)
+    console.log("JWT_SECRET:", process.env.JWT_SECRET)
+    const token = await jwt.sign({
+        id: user.id,
+        email: user.email
+    }, process.env.JWT_SECRET, { expiresIn: '1d' })
 
-    // enviar o token como resposta
+    if (!token) {
+        return res.status(500).json({ message: "Erro ao gerar o token de acesso!" })
+    }
 
 
-    return
+    // enviar o token para o cliente
+    return res.status(200).json({
+        profile: {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            avatar: user.avatar
+        },
+        token
+    })
+
 }
