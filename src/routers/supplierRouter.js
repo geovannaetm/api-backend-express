@@ -10,20 +10,11 @@ const router = express.Router()
 
 router.post('/', createSupplierController)
 
-
-
 router.get('/', listeSupplierController)
-
-
-
 
 router.get('/:id', getSupplierByIdController)
 
-
-
 router.put('/:id', editSupplierController)
-
-
 
 router.delete('/:id', deleteSupplierController)
 

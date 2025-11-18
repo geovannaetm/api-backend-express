@@ -8,10 +8,10 @@ import { authenticator } from '../middleware/authenticator.js'
 
 const router = express.Router()
 
-router.post('/', createProductController)
-router.use(authenticator)
 router.get('/', listeProductController)
 router.get('/:id', getByIdProductController)
+router.use(authenticator)
+router.post('/', createProductController)
 router.put('/:id', editProductController)
 router.delete('/:id', deleteProductController)
 
